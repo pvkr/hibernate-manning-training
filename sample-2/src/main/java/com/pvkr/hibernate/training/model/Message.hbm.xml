@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.pvkr.hibernate.training.model.Message" table="MESSAGES">
+        <id name="id" column="MESSAGE_ID">
+            <generator class="increment"/>
+        </id>
+
+        <property name="text" column="TEXT"/>
+
+        <many-to-one name="nextMessage"
+                     column="NEXT_MESSAGE_ID"
+                     foreign-key="FK_NEXT_MESSAGE"
+                     cascade="all"/>
+    </class>
+</hibernate-mapping>
