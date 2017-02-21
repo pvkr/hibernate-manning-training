@@ -1,5 +1,6 @@
 package com.pvkr.hibernate.training;
 
+import com.pvkr.hibernate.training.model.Author;
 import com.pvkr.hibernate.training.model.Message;
 
 import javax.persistence.EntityManager;
@@ -24,9 +25,11 @@ public class MainApp {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
-        Message message = new Message();
-        message.setText("Hello World!");
-        entityManager.persist(message);
+        Author author = new Author("Me");
+        author.addMessage(new Message("Hello World!"));
+        author.addMessage(new Message("Hello World, again!"));
+        author.addMessage(new Message("Hello World, and again!"));
+        entityManager.persist(author);
 
         transaction.commit();
         entityManager.close();
@@ -37,11 +40,12 @@ public class MainApp {
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
 
-        List<Message> messages = entityManager.createQuery("from Message m order by m.text asc", Message.class).getResultList();
-        System.out.println("Found messages: " + messages.size());
-        for (Message message : messages) {
-            System.out.println(message.getText());
-        }
+        List<Author> authors = entityManager.createQuery("from Author", Author.class).getResultList();
+        System.out.println("Found authors: " + authors.size());
+        authors.forEach(author -> {
+            System.out.println("Messages: ");
+            author.getMessages().forEach(message -> System.out.println(message.getText()));
+        });
 
         transaction.commit();
         entityManager.close();

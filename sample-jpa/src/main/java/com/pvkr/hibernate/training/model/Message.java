@@ -1,6 +1,9 @@
 package com.pvkr.hibernate.training.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.CascadeType;
@@ -12,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -20,8 +25,9 @@ public class Message {
     @GeneratedValue
     private Long id;
 
+    @NonNull
     private String text;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Message nextMessage;
+    @ManyToOne
+    private Author author;
 }

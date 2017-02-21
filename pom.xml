@@ -12,9 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>sample-1</module>
-        <module>sample-2</module>
-        <module>sample-3</module>
+        <module>sample-hbm</module>
+        <module>sample-jpa</module>
     </modules>
 
     <dependencies>
