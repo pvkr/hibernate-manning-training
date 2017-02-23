@@ -9,7 +9,7 @@ import java.util.List;
 import static com.pvkr.hibernate.training.util.HibernateUtil.getSessionFactory;
 import static com.pvkr.hibernate.training.util.HibernateUtil.shutdown;
 
-public class MainApp {
+public class SampleHbmApplication {
 
     public static void main(String[] args) {
         try (Session session = getSessionFactory().openSession()) {

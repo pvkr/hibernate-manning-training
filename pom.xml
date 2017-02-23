@@ -14,6 +14,7 @@
     <modules>
         <module>sample-hbm</module>
         <module>sample-jpa</module>
+        <module>sample-spring-boot-jpa</module>
     </modules>
 
     <dependencies>
@@ -24,24 +25,22 @@
         </dependency>
 
         <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.14</version>
             <scope>provided</scope>
         </dependency>
 
-        <!-- logback -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.1</version>
-        </dependency>
-
-        <!-- The tutorials use JUnit test cases to illustrate usage -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
         </dependency>
 
     </dependencies>

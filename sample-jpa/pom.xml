@@ -10,18 +10,9 @@
         <groupId>com.pvkr</groupId>
         <artifactId>hibernate-manning-training</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>sample-jpa</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>1.5.5</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <resources>
